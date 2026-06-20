@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Adeen Shaikh | Expense Tracker App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Muhammad Adeen Shaikh | Expense Tracker App</h1>
+    <br>
+    <div class="container">
+        <h5 style="padding-left: 14px;">Total balance</h5>
+        <h3 style="padding-left: 14px;">Rs. <span>0</span></h3>
+        
+        <div id="box">
+            <div id="box1" class="box">
+                Income
+                <h3>Rs. <span>0</span></h3>
+            </div>
+            <div id="box2" class="box">
+                Expense
+                <h3>Rs. <span>0</span></h3>
+            </div>
+        </div>
+        <br><hr><br>
+        <p>Add transaction</p>
+        <input type="text" id="Description" placeholder="Description (e.g. Groceries)">
+        <br><br>
+
+        <div class="values">
+            <input type="number" id="Amount" placeholder="Amount">
+            <Select id="category">
+                <option id="option" value="Expense">Expense</option>
+                <option id="option" value="Income">Income</option>
+            </Select>
+        </div>
+        <br>
+        <button id="btn">+ Add</button>
+
+        <br><br><hr><br>
+
+    </div>
+    <script src="script.js">
+
+    </script>
+</body>
+</html>
