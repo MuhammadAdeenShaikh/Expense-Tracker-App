@@ -40,13 +40,13 @@ h1 {
     padding: 8px;
 }
 
-#Description {
+#description {
     width: 370px;
     height: 40px;
     cursor: pointer;
 }
 
-#Amount {
+#amount {
     width: 182px;
     height: 40px;
     cursor: pointer;
@@ -62,4 +62,10 @@ h1 {
      width: 370px;
     height: 40px;
     cursor: pointer;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
 }

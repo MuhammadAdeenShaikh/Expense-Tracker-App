@@ -11,34 +11,37 @@
     <br>
     <div class="container">
         <h5 style="padding-left: 14px;">Total balance</h5>
-        <h3 style="padding-left: 14px;">Rs. <span>0</span></h3>
+        <h3 style="padding-left: 14px;">Rs. <span id="total">0</span></h3>
         
         <div id="box">
             <div id="box1" class="box">
                 Income
-                <h3>Rs. <span>0</span></h3>
+                <h3>Rs. <span id="income">0</span></h3>
             </div>
             <div id="box2" class="box">
                 Expense
-                <h3>Rs. <span>0</span></h3>
+                <h3>Rs. <span id="expense">0</span></h3>
             </div>
         </div>
         <br><hr><br>
         <p>Add transaction</p>
-        <input type="text" id="Description" placeholder="Description (e.g. Groceries)">
+        <input type="text" id="description" placeholder="Description (e.g. Groceries)">
         <br><br>
 
         <div class="values">
-            <input type="number" id="Amount" placeholder="Amount">
+            <input type="number" id="amount" placeholder="Amount">
             <Select id="category">
-                <option id="option" value="Expense">Expense</option>
-                <option id="option" value="Income">Income</option>
+                <option class="option" value="Expense">Expense</option>
+                <option class="option" value="Income">Income</option>
             </Select>
         </div>
         <br>
         <button id="btn">+ Add</button>
-
         <br><br><hr><br>
+        <h3>Transactions</h3>
+        <ul id="transaction">
+
+        </ul>
 
     </div>
     <script src="script.js">
