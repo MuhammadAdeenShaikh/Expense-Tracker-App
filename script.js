@@ -11,43 +11,74 @@ let Btn = document.getElementById("btn");
 let Transaction = document.getElementById("transaction");
 
 Btn.addEventListener("click", () => {
-    if(Description.value !== "" && Amount.value !== ""){
+
+    if (Description.value !== "" && Amount.value !== "") {
+
+        let amountValue = Number(Amount.value);
+        let categoryValue = Category.value;
+
         let li = document.createElement("li");
         Transaction.appendChild(li);
 
         let para = document.createElement("p");
+        para.innerText = Description.value;
         li.appendChild(para);
-        para.innerText += Description.value;
 
         let span = document.createElement("span");
         li.appendChild(span);
 
-        if(Category.value === "Expense"){
-            let AmountValue = Number(Amount.value);
-            let ExpenseValue = Number(Expense.innerText);
+        if (categoryValue === "Expense") {
 
-            span.innerText  += "-"  + Amount.value;
+            span.innerText = "-" + amountValue + " ";
+
             span.style.color = "red";
-            Expense.innerText = AmountValue + ExpenseValue;
-            
-        } else if(Category.value === "Income") {
-            let AmountValue = Number(Amount.value);
-            let IncomeValue = Number(Income.innerText);
-            
-            span.innerText  += "+" + Amount.value;
+
+            Expense.innerText =
+                Number(Expense.innerText) + amountValue;
+
+        } else {
+
+            span.innerText = "+" + amountValue + " ";
+
             span.style.color = "green";
-            Income.innerText = AmountValue + IncomeValue;
+
+            Income.innerText =
+                Number(Income.innerText) + amountValue;
         }
 
-        let incomeValue = Number(Income.innerText);
-        let expenseValue = Number(Expense.innerText);
+        let deleteBtn = document.createElement("i");
+        deleteBtn.classList.add("fa-solid", "fa-trash");
 
-        Total.innerText = incomeValue - expenseValue;
-        
+        span.appendChild(deleteBtn);
+
+        Total.innerText =
+            Number(Income.innerText) -
+            Number(Expense.innerText);
+
+        deleteBtn.addEventListener("click", () => {
+
+            if (categoryValue === "Expense") {
+
+                Expense.innerText =
+                    Number(Expense.innerText) - amountValue;
+
+            } else {
+
+                Income.innerText =
+                    Number(Income.innerText) - amountValue;
+            }
+
+            Total.innerText =
+                Number(Income.innerText) -
+                Number(Expense.innerText);
+
+            li.remove();
+        });
+
     } else {
         alert("Please fill all inputs");
     }
 
     Description.value = "";
     Amount.value = "";
-})
+});
